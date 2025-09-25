@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Convertisseur de devises</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="conteneur">
+    <h1>Convertisseur de devises</h1>
+
+    <section class="bloc">
+      <div class="ligne">
+        <label for="saisie-montant">Montant</label>
+        <input id="saisie-montant" type="number" min="0" step="0.01" placeholder="0,00" />
+      </div>
+
+      <div class="ligne deux-colonnes">
+        <div>
+          <label for="devise-source">De</label>
+          <select id="devise-source"></select>
+        </div>
+        <button id="inverser" title="Échanger les devises" aria-label="Échanger les devises">⇄</button>
+        <div>
+          <label for="devise-cible">À</label>
+          <select id="devise-cible"></select>
+        </div>
+      </div>
+
+      <p id="ligne-taux" class="attenue">—</p>
+      <output id="affichage" aria-live="polite">Saisissez un montant</output>
+
+      <div class="actions">
+        <button id="actualiser">Actualiser les taux</button>
+        <span id="etat" class="etat"></span>
+      </div>
+    </section>
+
+    <section class="bloc">
+      <h2>Historique</h2>
+      <ul id="liste-historique" class="liste-historique"></ul>
+      <div class="actions">
+        <button id="vider-historique">Vider l’historique</button>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
